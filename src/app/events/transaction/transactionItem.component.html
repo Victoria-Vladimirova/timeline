@@ -1,0 +1,12 @@
+<div class='transaction-data-row'>
+    <span class='transaction-sum {{getDirectionClass(model.direction)}}'>
+        {{getDirectionSign(model.direction)}} {{model.sum}} {{model.currency}}
+    </span>
+    <time class='transaction-date'>
+        {{model.date | date:'dd MMM yyyy HH:mm:ss'}}
+    </time>
+</div>
+<div class='transaction-party'>
+    <strong>{{getPartyLabel(model.direction)}}</strong>
+    {{model.party}}
+</div>

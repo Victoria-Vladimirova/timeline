@@ -1,0 +1,120 @@
+@import '../../../constants';
+
+
+:host {
+  display: none;
+}
+
+.modal {
+  z-index: 110;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: auto;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+  min-width: 500px;
+
+  &,
+  &-bg {
+    position: fixed;
+  }
+
+  &-bg {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+  }
+
+  &-close {
+    position: absolute;
+    z-index: 11;
+    cursor: pointer;
+    right: 30px;
+    top: 15px;
+
+    &:after {
+      color: $primary-color;
+      display: inline-block;
+      content: '\d7';
+      font-size: 25px;
+    }
+  }
+
+  &-header,
+  &-footer {
+    position: relative;
+  }
+
+  &-header {
+    border-bottom: 1px solid #eee;
+    margin: 0 15px 15px 0;
+  }
+
+  &-title {
+    padding: 0;
+    font-size: 28px;
+    margin: 0 0 10px;
+  }
+
+  &-content {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    &-field {
+      margin: 8px 0;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    padding: 10px 0 0;
+    align-items: center;
+    justify-content: flex-end;
+
+    button:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  &-button {
+    width: 100px;
+  }
+}
+
+.form {
+  &-field-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &-fields-group,
+  &-field {
+    margin-bottom: 20px;
+  }
+
+  &-fields-group {
+    display: flex;
+
+    .form-field {
+      display: inline-block;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+.event-date {
+  color: #b9c1c4;
+  font-size: 12px;
+}

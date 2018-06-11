@@ -1,0 +1,43 @@
+<div class='modal-bg'></div>
+
+<div class='modal'>
+    <span class='modal-close' (click)='close("EditModal");'></span>
+
+    <header class='modal-header'>
+        <h2 class='modal-title'>Добавить новое событие</h2>
+    </header>
+
+    <form class='modal-content'
+          id='add-event'
+          (submit)='onAdd()'
+          ngNativeValidate
+    >
+        <div class='form-field'>
+            <label for='type-select' class='form-field-label'>Тип события</label>
+            <select id='type-select'
+                    [(ngModel)]='selectedType'
+                    [ngModelOptions]='{standalone: true}'
+                    (change)='onSelectedTypeChanged()'
+            >
+                <option *ngFor='let type of getType()' [ngValue]='type'>{{type}}</option>
+            </select>
+        </div>
+
+        <dcl-wrapper [type]='getEditComponentType()' [model]='model'></dcl-wrapper>
+
+        <footer class='modal-footer'>
+            <button class='button-green modal-button'
+                    form='add-event'
+                    type='submit'
+            >
+                Добавить
+            </button>
+            <button class='modal-button'
+                    type='button'
+                    (click)='close("EditModal");'
+            >
+                Закрыть
+            </button>
+        </footer>
+    </form>
+</div>

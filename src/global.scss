@@ -1,0 +1,149 @@
+/**
+ * Global Application Styles
+ */
+@import 'constants';
+
+
+body {
+  font: $primary-font-size $primary-font;
+  position: relative;
+  min-width: 750px;
+  margin: 0;
+  color: $primary-color;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+select,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-block;
+  width: 250px;
+  padding: 0 10px;
+  color: $primary-color;
+  border: 1px solid #e8e8ea;
+  background-color: #fff;
+}
+
+select {
+  font-size: 13px;
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-transform: none;
+}
+
+button {
+  font-size: 10px;
+  width: 130px;
+  padding: 0 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  background-color: #7ba7e4;
+}
+
+input {
+  box-shadow: inherit;
+
+  &::-ms-clear {
+    height: 0;
+    width: 0;
+  }
+}
+
+.button {
+  &-green {
+    background-color: #2ecc71;
+  }
+
+  &-red {
+    background-color: #e74c3c;
+
+  }
+}
+
+button,
+select,
+input {
+  line-height: 35px;
+  height: 35px;
+  user-select: none;
+  outline: none;
+}
+
+button,
+select,
+input,
+textarea,
+.control-indicator {
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.control-checkbox {
+  line-height: 20px;
+  position: relative;
+  display: block;
+  height: 20px;
+  padding-left: 30px;
+  cursor: pointer;
+
+  input {
+    display: none;
+
+    &:checked ~ .control-indicator {
+      background-color: #71a9e2;
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+}
+
+.control-indicator {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #e8e8ea;
+
+  &,
+  &:after {
+    position: absolute;
+  }
+
+  &:after {
+    display: none;
+    content: '';
+    top: 4px;
+    left: 8px;
+    width: 4px;
+    height: 8px;
+    transform: rotate(45deg);
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+  }
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+// IE10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  select {
+    background: none;
+    padding-right: 0;
+  }
+}

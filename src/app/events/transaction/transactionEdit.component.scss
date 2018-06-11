@@ -1,0 +1,61 @@
+@import '../../../constants';
+
+
+.form {
+  &-field-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &-fields-group,
+  &-field {
+    margin-bottom: 20px;
+  }
+
+  &-field {
+    .date-input,
+    .time-input,
+    .sum-input,
+    .direction-select {
+      width: 130px;
+    }
+
+    .currency-select {
+      width: 80px;
+    }
+
+    .description-textarea {
+      font: inherit;
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      resize: none;
+      color: inherit;
+      border: 1px solid #e8e8ea;
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .sum-input,
+    .date-input,
+    .time-input,
+    .party-input {
+      &:invalid {
+        border-color: $red;
+      }
+    }
+  }
+
+  &-fields-group {
+    display: flex;
+
+    .form-field {
+      display: inline-block;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../../constants';
+
+
+:host {
+  display: block;
+  padding: 15px 30px;
+}
+
+.transaction {
+  &-data-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &-sum {
+    font-size: 20px;
+
+    &.expense {
+      color: $red;
+    }
+
+    &.income {
+      color: $green;
+    }
+  }
+
+  &-date {
+    color: #b9c1c4;
+    font-size: 12px;
+  }
+
+  &-party {
+    font-size: 13px;
+  }
+}

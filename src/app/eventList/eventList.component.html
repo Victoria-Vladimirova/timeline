@@ -1,0 +1,51 @@
+<article>
+    <header class='event-list-header'>
+        <h1 class='event-list-title'>События</h1>
+        <button type='button' (click)='openNewEvent("EditModal")'>Новое событие</button>
+    </header>
+
+    <section>
+        <div class='control-container'>
+            <div class='sort-container'>
+                <select class='date-sort' (change)='onSort($event.target.value)'>
+                    <option value='DESC' selected>Сначала новые</option>
+                    <option value='ASC'>Сначала старые</option>
+                </select>
+                <div class='type-sort'>
+                    <label class='control-checkbox'>
+                        Группировать по типу
+                        <input type='checkbox' (change)='onGroupByType($event.target.checked)'>
+                        <span class='control-indicator'></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class='pagination-container'>
+                <span class='pagination-count'>{{currPage + 1}} из {{totalPages}}</span>
+                <button class='pagination-button'
+                        title='Предыдущая страница'
+                        [disabled]='currPage <= 0'
+                        (click)='setCurrPage(currPage - 1)'
+                >
+                    &lsaquo;
+                </button>
+                <button class='pagination-button'
+                        title='Следующая страница'
+                        [disabled]='currPage >= totalPages - 1'
+                        (click)='setCurrPage(currPage + 1)'
+                >
+                    &rsaquo;
+                </button>
+            </div>
+        </div>
+
+        <ul class='event-list'>
+            <li class='event-list-item'
+                *ngFor='let event of events'
+                (click)='openEvent(event)'
+            >
+                <dcl-wrapper [type]='getEventViewType(event)' [model]='event'></dcl-wrapper>
+            </li>
+        </ul>
+    </section>
+</article>

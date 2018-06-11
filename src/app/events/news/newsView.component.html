@@ -1,0 +1,24 @@
+<div class='modal-bg'></div>
+
+<div class='modal' *ngIf='event'>
+    <span class='modal-close' (click)='close("modal-news-view");'></span>
+
+    <header class='modal-header'>
+        <h2 class='modal-title'>{{event.title}}</h2>
+    </header>
+
+    <article class='modal-content'>
+        <time class='event-date'>{{event.date | date:'dd MMM yyyy HH:mm:ss'}}</time>
+        <p *ngIf='event.description'>{{event.description}}</p>
+    </article>
+
+    <footer class='modal-footer'>
+        <button class='button-green modal-button'
+                *ngIf='!event.isRead'
+                (click)='onRead(event)'
+        >
+            Ознакомлен
+        </button>
+        <button class='modal-button' (click)='close("modal-news-view");'>Закрыть</button>
+    </footer>
+</div>

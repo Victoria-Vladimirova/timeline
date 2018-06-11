@@ -1,0 +1,77 @@
+@import '../../constants';
+
+
+.event-list {
+  &-header {
+    padding: 20px 0;
+    text-transform: uppercase;
+  }
+
+  &-title {
+    font-size: 30px;
+    font-weight: normal;
+    color: #4e5f66;
+  }
+
+  &-item {
+    box-sizing: border-box;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    background: #f2f6f9;
+    overflow: hidden;
+  }
+}
+
+.event-list-header,
+.control-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-container {
+  margin-bottom: 40px;
+}
+
+.sort-container {
+  display: flex;
+  align-items: baseline;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.date-sort {
+  position: relative;
+  width: 150px;
+}
+
+.pagination-button {
+  font-size: 20px;
+  width: 45px;
+  padding: 0 10px;
+  color: #73758c;
+  border: 1px solid #e8e8ea;
+  background-color: #fff;
+
+  &:not(:disabled):hover {
+    background-color: #f7f7f9;
+  }
+
+  &:disabled {
+    color: #e2deee;
+    cursor: not-allowed;
+  }
+}
+
+.date-sort,
+.pagination-count {
+  margin-right: 25px;
+}
+
+// IE10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .date-sort {
+    padding-right: 0;
+  }
+}

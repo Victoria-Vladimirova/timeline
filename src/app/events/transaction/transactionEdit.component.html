@@ -1,0 +1,89 @@
+<div>
+    <div class='form-field'>
+        <label for='party-input' class='form-field-label'>{{getPartyLabel(model.direction)}}</label>
+        <input id='party-input'
+               type='text'
+               required
+               [(ngModel)]='model.party'
+               name='party'
+               #name='ngModel'
+        >
+    </div>
+
+    <div class='form-fields-group'>
+        <div class='form-field'>
+            <label for='direction-select' class='form-field-label'>Тип транзакции</label>
+            <select id='direction-select'
+                    class='direction-select'
+                    [(ngModel)]='model.direction'
+                    name='direction'
+            >
+                <option *ngFor='let direction of getDirection()' [ngValue]='direction'>{{direction}}</option>
+            </select>
+        </div>
+
+        <div class='form-field'>
+            <label for='sum-input' class='form-field-label'>Сумма</label>
+            <input id='sum-input'
+                   type='number'
+                   min='0'
+                   required
+                   value='0'
+                   class='sum-input'
+                   [(ngModel)]='model.sum'
+                   name='sum'
+            >
+        </div>
+
+        <div class='form-field'>
+            <label for='currency-select' class='form-field-label'>Валюта</label>
+            <select id='currency-select'
+                    class='currency-select'
+                    [(ngModel)]='model.currency'
+                    name='currency'
+            >
+                <option *ngFor='let currency of getCurrencies()' [ngValue]='currency'>{{currency}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class='form-fields-group'>
+        <div class='form-field'>
+            <label for='date-input' class='form-field-label'>Дата</label>
+            <input type='text'
+                   pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d'
+                   placeholder='dd.mm.yyyy'
+                   required
+                   id='date-input'
+                   class='date-input'
+                   [value]='model.eventDate'
+                   (blur)='model.eventDate = $event.target.value'
+                   name='eventDate'
+            >
+        </div>
+
+        <div class='form-field'>
+            <label for='time-input' class='form-field-label'>Время</label>
+            <input type='text'
+                   pattern='(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]){1,2}'
+                   placeholder='hh:mm[:ss]'
+                   required
+                   id='time-input'
+                   class='time-input'
+                   [value]='model.eventTime'
+                   (blur)='model.eventTime = $event.target.value'
+                   name='eventTime'
+            >
+        </div>
+    </div>
+
+    <div class='form-field'>
+        <label for='description-textarea' class='form-field-label'>Описание</label>
+        <textarea id='description-textarea'
+                  class='description-textarea'
+                  [(ngModel)]='model.description'
+                  name='description'
+        >
+        </textarea>
+    </div>
+</div>

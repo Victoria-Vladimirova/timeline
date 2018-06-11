@@ -1,0 +1,45 @@
+{
+    "name": "timeline",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "webpack-dev-server --inline --config config/build/webpack.dev.js --progress --port 3000",
+        "lint": "tslint -c config/tslint.json \"src/app/**/*.ts\"",
+        "build": "rimraf dist && webpack --config config/build/webpack.prod.js --progress --profile --bail",
+        "server": "node config/server/prod-server.js"
+    },
+    "dependencies": {
+        "@angular/common": "^5.2.11",
+        "@angular/compiler": "^5.2.11",
+        "@angular/core": "^5.2.11",
+        "@angular/forms": "^5.2.11",
+        "@angular/http": "^5.2.11",
+        "@angular/platform-browser": "^5.2.11",
+        "@angular/platform-browser-dynamic": "^5.2.11",
+        "@angular/router": "^5.2.11",
+        "core-js": "^2.4.1",
+        "rxjs": "^5.5.5",
+        "zone.js": "^0.8.22"
+    },
+    "devDependencies": {
+        "@types/node": "~6.0.88",
+        "angular2-template-loader": "^0.6.2",
+        "awesome-typescript-loader": "~3.2.3",
+        "codelyzer": "^4.3.0",
+        "css-loader": "^0.28.1",
+        "extract-text-webpack-plugin": "3.0.0",
+        "file-loader": "^0.8.5",
+        "html-loader": "^0.4.3",
+        "html-webpack-plugin": "^3.2.0",
+        "live-server": "1.2.0",
+        "loader-utils": "^1.1.0",
+        "node-sass": "^4.5.3",
+        "sass-loader": "^6.0.6",
+        "to-string-loader": "^1.1.5",
+        "tslint": "~5.7.0",
+        "typescript": "~2.6.x",
+        "webpack": "~3.4.1",
+        "webpack-dev-server": "~2.5.1",
+        "webpack-merge": "~4.1.0"
+    }
+}
