@@ -14,21 +14,19 @@
 - node 8
 - yarn 0.27.5
 
-### Событие
+### Базовая структура события
 
 ```
     {
         _id: string,
         type: string,
         date: "YYYY-MM-ddThh:mm:ssZ"
-
-        ...
     }
 ```
 
-### Добавление нового события
+### Добавление нового типа события
 
 1. Добавить новую модель в **src/app/model**
 2. Добавать компонент для списка, просмотра, создания в **src/app/events/myevent**
-3. Добавить новое собтие в **src/app/events/eventComponent.service.ts**
+3. Добавить новое событие в **src/app/events/eventComponent.service.ts**
 4. Добавить новые поля в **src/app/events/eventJSON.model.ts**
